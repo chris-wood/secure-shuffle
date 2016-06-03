@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.math.BigInteger;
 
-public class Pallier {
+public class Paillier {
 
     BigInteger N;
     BigInteger N2;
@@ -14,7 +14,7 @@ public class Pallier {
     BigInteger mu;
     BigInteger g;
 
-    public Pallier(int bitLength) {
+    public Paillier(int bitLength) {
         PrimeGenerator generator = new PrimeGenerator();
         CompositeModulus mod = generator.generateCompositeModulus(bitLength - 1);
         p = mod.factors.get(0);
@@ -86,7 +86,7 @@ public class Pallier {
     }
 
     public static void main(String[] args) {
-        Pallier p = new Pallier(Integer.parseInt(args[0]));
+        Paillier p = new Paillier(Integer.parseInt(args[0]));
 
         BigInteger m1 = p.randomElementInN();
         System.out.println("Encrypting: " + m1);
